@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body, html {
+				height: 100%;
+				margin: 0;
+				background-color: #f2f2f2;
+				box-sizing: border-box;
+			}
+
+			*, *:before, *:after {
+				box-sizing: inherit;
+			}
+
+			#navbar {
+				overflow: hidden;
+ 			 	background-color: #000;
+ 			 }
+
+ 			 #navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+
+  			}
+  			.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+.sticky + .content {
+  padding-top: 60px;
+}
+			.column {
+				float: left;
+				width: 25%;
+				margin-botton: 16px;
+				padding: 0 8px;
+			}
+
+			@media screen and (max-width: 650px) {
+				.column {
+					width: 100%;
+					display: block;
+				}
+			}
+
+			.card {
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+				background-color: white;
+				text-align: center;
+			}
+
+			.container {
+				padding: 0 16px;
+			}
+
+			.container::after, .row::after {
+				content: " ";
+				clear: both;
+				display: table;
+			}
+
+			.title {
+				color: grey;
+			}
+
+			button {
+				border: none;
+				outline: 1;
+				display: inline-block;
+				padding: 8px;
+				color: white;
+				background-color: #000;
+				text-align: center;
+				cursor: pointer;
+				width: 100%;
+				font-size: 18px;
+			}
+
+			a {
+				text-decoration: none;
+				font-size: 22px;
+				color: black;
+			}
+
+			button:hover, a:hover {
+				opacity: 0.7;
+			}
+
+
+			.hero-image {
+				background-image: url("AcaChoirWeb/ideas2.png");
+				height: 50%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+
+			#myImg {
+    			border-radius: 5px;
+    			cursor: pointer;
+    			transition: 0.3s;
+			}
+
+			#myImg:hover {opacity: 0.7;}
+
+			.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	}
+
+    .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+
+		}
+
+		#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+			}
+
+			.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+			.footer {
+				padding: 20px;
+				text-align: center;
+				background: #ddd;
+				margin-top: 20px;
+			}
+
+		</style>
+		<title>UCSD A Cappella Choir</title>
+		</head>
+		<body>
+
+			<div class="hero-image">
+				<div class="hero-text">
+					
+				</div>
+			</div>	
+			<div id="navbar">
+				<a href="#home">Updates</a>
+  				<a href="#home">About</a>
+  				<a href="#news">Schedule</a>
+  				<a href="#news">Members</a>
+  				<a href="#news">Gallery</a>
+  				<a href="#news">FAQ</a>
+ 				<a href="#contact">Contact</a>
+			</div>
+			<hr>
+
+			<h1 style="text-align: center"><i>About the club</i></h1>
+
+			<hr> 
+
+			<p style="text-align: center; font-size:20px; padding: 20px">
+			<i>UCSD's first A Cappella Choir! AcaChoir is a new organization founded in 2017. We strive to provide a place for singers who are interested in learning/singing a cappella.</i></p>
+
+
+			<hr>
+			<h1 style="text-align: center"><i>&#9835; Schedule &#9834;</i></h1>
+			<hr>
+			<p style="text-align: center; font-size:20px; padding: 20px">
+			We meet <b>every Wednesdays at 8-9pm</b> this quarter!
+			<br>&nbsp;
+			<br><u>Locations:</u>
+			<br>May 9 @ Center 115</p>
+
+			<hr>
+			<h1 style="text-align: center"><i>Meet the board members</i></h1>
+
+			<hr> 
+
+			<div class="row">
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/matt.jpg" alt="Matt" style="width:100%">
+						<div class="container">
+							<h2>Matthew Juandy</h2>
+							<p class="title">President</p>
+							<p>Year: Senior</p>
+							<p>Voice Part: Bass</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/michelle.jpg" alt="Michelle" style="width:100%">
+						<div class="container">
+							<h2>Michelle Wan</h2>
+							<p class="title">Vice President</p>
+							<p>Year: Sophomore</p>
+							<p>Voice Part: Alto</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/micah.jpg" alt="Micah" style="width:100%">
+						<div class="container">
+							<h2>Micah Banawis</h2>
+							<p class="title">Music Director</p>
+							<p>Year: Sophomore</p>
+							<p>Voice Part: Mezzo-Soprano</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/gloria.jpg" alt="Gloria" style="width:100%">
+						<div class="container">
+							<h2>Gloria Cheung</h2>
+							<p class="title">Public Relations</p>
+							<p>Year: Freshman</p>
+							<p>Voice Part: Tenor</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/micah.jpg" alt="Micah" style="width:100%">
+						<div class="container">
+							<h2>Micah Banawis</h2>
+							<p class="title">Music Director</p>
+							<p>Year: Sophomore</p>
+							<p>Voice Part: Mezzo-Soprano</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<img src="AcaChoirWeb/micah.jpg" alt="Micah" style="width:100%">
+						<div class="container">
+							<h2>Micah Banawis</h2>
+							<p class="title">Music Director</p>
+							<p>Year: Sophomore</p>
+							<p>Voice Part: Mezzo-Soprano</p>
+							<p> Something that describes. Description </p>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+
+			&nbsp;
+
+			<hr>
+
+			<h1 style="text-align: center"><i>Photo Gallery</i></h1>
+
+			<hr>
+
+			<img id="myImg" src="AcaChoirWeb/group1.jpg" alt="After rehearsal!" width="300" height="200">
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+
+			<img id="myImg" src="AcaChoirWeb/group2.jpg" alt="After rehearsal!" width="300" height="200">
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img02">
+				<div id="caption"></div>
+			</div>
+
+			<img id="myImg" src="AcaChoirWeb/group3.jpg" alt="After rehearsal!" width="300" height="200">
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img03">
+				<div id="caption"></div>
+			</div>
+
+			<img id="myImg" src="AcaChoirWeb/group4.jpg" alt="After rehearsal!" width="300" height="200">
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+
+			<img id="myImg" src="AcaChoirWeb/group5.jpg" alt="After rehearsal!" width="300" height="200">
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+
+			<hr>
+			<h1 style="text-align: center"><i>FAQ</i></h1>
+
+			<hr>
+
+			<p style="text-align: center">
+
+				<b>Q: Do I have to register?</b>
+				</br>A: Nope! Just come stop by! Looking forward to meet you! :)
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: What kind of songs does the group sing?</b>
+				</br>A: We mostly sing pop songs. If you have any recommedations, let us know!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: I don't have any singing experience nor knowing how to read music! Can I still join?</b>
+				</br>A: Of course! That's what we're here for! There are no auditions required. A Cappella Choir is a great place to learn singing techniques and to have fun with other students who are also interested in singing! We are offering individual feedbacks if you are interested. Just let one of the board members know!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: I missed the first couple of rehearsals! Can I join halfway in the quarter?</b>
+				</br>A: Yes! We have different a cappella groups on campus coming to teach during each rehearsals so don't worry about missing too much! Each rehearsal will be learning a song from the week's appointed a cappella group until we get a solid group of members. So bring your friends!!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: Will we get to perform?</b>
+				</br>A: That is our goal! As of now, no. We are trying to get a consistent group who are interested in spending more time to learn a song for performance. It will take a little more time commitment to prepare a song that is ready to perform. However if you are interested in performing, let us know and we can find opportunities and figure something out!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: How is the time commitment like?</b>
+				</br>A: This is a very low commitment club. You are welcome to just come whenever you're free. We understand that college could get really demanding with everything happening, so it's ok if you can't make it every week. However, we would love to see you back and be a part of our singing community! AcaChoir is a great place to meet other singers and to experience how it's like singing in an A Cappella group!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: Can anyone join?</b>
+				</br>A: Yes, everyone is welcome to join!
+
+				</br>
+				&nbsp;
+				</br>
+
+				<b>Q: Do you have a Facebook page?</b>
+				</br>A: Yes! In fact, we mostly update our informations on there.
+				</br> Please join our:
+				</br> <a href="https://www.facebook.com/UCSDacappellachoir/">Facebook Page</a>
+				</br> <a href="https://www.facebook.com/groups/1798862483742662/">Facebook Group</a>
+
+
+			</p>
+
+			<hr>
+			&nbsp;
+
+			<div class="footer">
+				<p style="font-size:15px">
+				<b style="font-size: 18px">Contact Us:</b> 
+			    </br>Phone #: (415) 335-2550 
+				</br>Email: m9wan@ucsd.edu
+				</br></p>
+				<div style="margin: 24px 0;">
+					<a href="https://www.facebook.com/OMGITZMICHELLE"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.linkedin.com/in/michelle-w-148185b6/"><i class="fa fa-linkedin"></i></a>
+					<a href="https://www.youtube.com/channel/UCkEwDjl8vdA6NohLBooqKnw?view_as=subscriber"><i class="fa fa-youtube"></i></a>
+					<a href="https://www.instagram.com/mushibunni/"><i class="fa fa-instagram"></i></a></p>
+				</div>
+			<p><a href="PortfolioContact.html"><button>Contact</button></a></p>
+			</div>
+			<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+
+			function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+var modal = document.getElementById('myModal');
+
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+			</script>
+			
+		</body>
+		</head>
